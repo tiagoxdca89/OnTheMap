@@ -9,13 +9,21 @@
 import UIKit
 
 class ListViewController: UIViewController {
+    
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupViews()
         // Do any additional setup after loading the view.
     }
     
+    private func setupViews() {
+        navigationItem.title = "ListView"
+    }
 
     /*
     // MARK: - Navigation
@@ -27,4 +35,23 @@ class ListViewController: UIViewController {
     }
     */
 
+}
+
+extension ListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListCell else { return UITableViewCell() }
+        cell.setup()
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }

@@ -31,7 +31,18 @@
                     <view key="view" contentMode="scaleToFill" id="P02-bn-6M4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2G0-PZ-Efl">
+                                <rect key="frame" x="0.0" y="2.5" width="414" height="896"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2G0-PZ-Efl" firstAttribute="centerX" secondItem="XKL-LL-oxy" secondAttribute="centerX" id="FJH-7z-pRS"/>
+                            <constraint firstItem="2G0-PZ-Efl" firstAttribute="height" secondItem="P02-bn-6M4" secondAttribute="height" id="UJI-s8-cTD"/>
+                            <constraint firstItem="2G0-PZ-Efl" firstAttribute="centerY" secondItem="XKL-LL-oxy" secondAttribute="centerY" id="f1i-yB-6ih"/>
+                            <constraint firstItem="2G0-PZ-Efl" firstAttribute="width" secondItem="P02-bn-6M4" secondAttribute="width" id="iL5-lw-yLM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XKL-LL-oxy"/>
                     </view>
                     <navigationItem key="navigationItem" id="HUB-QO-ZYS">
@@ -47,10 +58,13 @@
                             <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="2G0-PZ-Efl" id="2b5-EC-99h"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LpD-1e-Nk0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1893" y="-252"/>
+            <point key="canvasLocation" x="1892.753623188406" y="-252.45535714285714"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lur-dw-X6y">

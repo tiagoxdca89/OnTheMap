@@ -11,7 +11,7 @@
         <scene sceneID="z4v-30-VJm">
             <objects>
                 <navigationController id="nDF-xh-XNS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" image="mappin.and.ellipse" catalog="system" id="1PO-hr-lYe"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="icon_mapview-selected" selectedImage="icon_mapview-selected" id="1PO-hr-lYe"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jrN-b2-GHv">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -47,13 +47,80 @@
                     <view key="view" contentMode="scaleToFill" id="exF-QA-dTS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchLogo" translatesAutoresizingMaskIntoConstraints="NO" id="86H-4B-HIv">
+                                <rect key="frame" x="167" y="164" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="KDv-iT-RxM"/>
+                                    <constraint firstAttribute="width" constant="80" id="YVi-5A-WL3"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="9zA-vb-Oih">
+                                <rect key="frame" x="16" y="283" width="382" height="330"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to Udacity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgN-xh-6da">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="53"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JCH-fI-Tes">
+                                        <rect key="frame" x="0.0" y="69" width="382" height="53.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Gd-pZ-deT">
+                                        <rect key="frame" x="0.0" y="138.5" width="382" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-89-wpH">
+                                        <rect key="frame" x="0.0" y="207.5" width="382" height="53.5"/>
+                                        <color key="backgroundColor" red="0.89026808375634514" green="0.20706351291960368" blue="0.173711351567057" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVI-PP-t42">
+                                        <rect key="frame" x="0.0" y="277" width="382" height="53"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <state key="normal" title="Don't have an account? Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="330" id="R0S-Se-NLI"/>
+                                </constraints>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i43-Hn-pTh">
+                                <rect key="frame" x="16" y="780" width="382" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="J1R-9S-Rka"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" image="facebookbtn"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9zA-vb-Oih" firstAttribute="top" secondItem="86H-4B-HIv" secondAttribute="bottom" constant="39" id="4Hu-Ay-7L0"/>
+                            <constraint firstItem="i43-Hn-pTh" firstAttribute="leading" secondItem="1Fl-8V-cBN" secondAttribute="leading" constant="16" id="B3g-le-OjS"/>
+                            <constraint firstItem="9zA-vb-Oih" firstAttribute="centerY" secondItem="exF-QA-dTS" secondAttribute="centerY" id="CVc-iP-Ehx"/>
+                            <constraint firstItem="1Fl-8V-cBN" firstAttribute="bottom" secondItem="i43-Hn-pTh" secondAttribute="bottom" constant="32" id="DcE-xQ-WFV"/>
+                            <constraint firstItem="1Fl-8V-cBN" firstAttribute="trailing" secondItem="9zA-vb-Oih" secondAttribute="trailing" constant="16" id="XJh-d7-TE2"/>
+                            <constraint firstItem="9zA-vb-Oih" firstAttribute="centerX" secondItem="exF-QA-dTS" secondAttribute="centerX" id="bRo-eB-ybO"/>
+                            <constraint firstItem="1Fl-8V-cBN" firstAttribute="trailing" secondItem="i43-Hn-pTh" secondAttribute="trailing" constant="16" id="cve-4N-g6u"/>
+                            <constraint firstItem="86H-4B-HIv" firstAttribute="centerX" secondItem="exF-QA-dTS" secondAttribute="centerX" id="h0r-ER-zUj"/>
+                            <constraint firstItem="9zA-vb-Oih" firstAttribute="leading" secondItem="1Fl-8V-cBN" secondAttribute="leading" constant="16" id="vQ7-2z-In9"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Fl-8V-cBN"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZg-kl-lc0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-446" y="172"/>
+            <point key="canvasLocation" x="-446.37681159420293" y="171.42857142857142"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="7Ob-0Z-RQC">
@@ -78,7 +145,7 @@
         <scene sceneID="RiF-eL-52u">
             <objects>
                 <navigationController id="0Zf-AB-GwP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List" image="list.bullet" catalog="system" id="ydc-nU-mOm"/>
+                    <tabBarItem key="tabBarItem" title="List" image="icon_listview-selected" selectedImage="icon_listview-selected" id="ydc-nU-mOm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="r4h-if-7ZC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -109,7 +176,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="LaunchLogo" width="80" height="80"/>
+        <image name="facebookbtn" width="790" height="118"/>
+        <image name="icon_listview-selected" width="75" height="50"/>
+        <image name="icon_mapview-selected" width="75" height="50"/>
     </resources>
 </document>

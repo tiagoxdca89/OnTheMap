@@ -18,6 +18,21 @@
 		0F37B93B2470477D000E87A1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37B9382470477D000E87A1 /* MapViewController.swift */; };
 		0F37B93D247047DA000E87A1 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F37B93C247047DA000E87A1 /* Colors.xcassets */; };
 		0F37B93F247062C1000E87A1 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F37B93E247062C1000E87A1 /* ListCell.swift */; };
+		0FCECBF2247127F700FF3FBA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBF1247127F700FF3FBA /* Client.swift */; };
+		0FCECBF424712AC300FF3FBA /* StudentsLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBF324712AC300FF3FBA /* StudentsLocations.swift */; };
+		0FCECBF624712D8100FF3FBA /* StudentsLocationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBF524712D8100FF3FBA /* StudentsLocationsRequest.swift */; };
+		0FCECBF824712F2600FF3FBA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBF724712F2600FF3FBA /* API.swift */; };
+		0FCECBFA2471314F00FF3FBA /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBF92471314F00FF3FBA /* ErrorResponse.swift */; };
+		0FCECBFC2471354E00FF3FBA /* CreateStudentLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBFB2471354E00FF3FBA /* CreateStudentLocationRequest.swift */; };
+		0FCECBFE2471363400FF3FBA /* PostLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBFD2471363400FF3FBA /* PostLocationResponse.swift */; };
+		0FCECC0024713AD700FF3FBA /* UpdateStudentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECBFF24713AD700FF3FBA /* UpdateStudentRequest.swift */; };
+		0FCECC0224713D7F00FF3FBA /* UpdateLocationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC0124713D7F00FF3FBA /* UpdateLocationResponse.swift */; };
+		0FCECC0424713E9600FF3FBA /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC0324713E9600FF3FBA /* LoginRequest.swift */; };
+		0FCECC06247141D500FF3FBA /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC05247141D500FF3FBA /* LoginResponse.swift */; };
+		0FCECC082471474A00FF3FBA /* DeleteSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC072471474A00FF3FBA /* DeleteSessionResponse.swift */; };
+		0FCECC0A2471479000FF3FBA /* DeleteSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC092471479000FF3FBA /* DeleteSessionRequest.swift */; };
+		0FCECC0C247149FB00FF3FBA /* StudentInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC0B247149FB00FF3FBA /* StudentInformationRequest.swift */; };
+		0FCECC0E24714D6300FF3FBA /* StudentInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC0D24714D6300FF3FBA /* StudentInformationResponse.swift */; };
 		3CF66E3197B04F0088634D92 /* Pods_OnTheMap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45D8A87E794737E4772D096C /* Pods_OnTheMap.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +50,21 @@
 		0F37B9382470477D000E87A1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		0F37B93C247047DA000E87A1 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		0F37B93E247062C1000E87A1 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		0FCECBF1247127F700FF3FBA /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		0FCECBF324712AC300FF3FBA /* StudentsLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsLocations.swift; sourceTree = "<group>"; };
+		0FCECBF524712D8100FF3FBA /* StudentsLocationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsLocationsRequest.swift; sourceTree = "<group>"; };
+		0FCECBF724712F2600FF3FBA /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		0FCECBF92471314F00FF3FBA /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		0FCECBFB2471354E00FF3FBA /* CreateStudentLocationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateStudentLocationRequest.swift; sourceTree = "<group>"; };
+		0FCECBFD2471363400FF3FBA /* PostLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostLocationResponse.swift; sourceTree = "<group>"; };
+		0FCECBFF24713AD700FF3FBA /* UpdateStudentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateStudentRequest.swift; sourceTree = "<group>"; };
+		0FCECC0124713D7F00FF3FBA /* UpdateLocationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateLocationResponse.swift; sourceTree = "<group>"; };
+		0FCECC0324713E9600FF3FBA /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		0FCECC05247141D500FF3FBA /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		0FCECC072471474A00FF3FBA /* DeleteSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSessionResponse.swift; sourceTree = "<group>"; };
+		0FCECC092471479000FF3FBA /* DeleteSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSessionRequest.swift; sourceTree = "<group>"; };
+		0FCECC0B247149FB00FF3FBA /* StudentInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationRequest.swift; sourceTree = "<group>"; };
+		0FCECC0D24714D6300FF3FBA /* StudentInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationResponse.swift; sourceTree = "<group>"; };
 		45D8A87E794737E4772D096C /* Pods_OnTheMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnTheMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A43E49346C7E9B8E91D1ECD9 /* Pods-OnTheMap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTheMap.release.xcconfig"; path = "Target Support Files/Pods-OnTheMap/Pods-OnTheMap.release.xcconfig"; sourceTree = "<group>"; };
 		A4FF3FC416AC16C116FB59A8 /* Pods-OnTheMap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnTheMap.debug.xcconfig"; path = "Target Support Files/Pods-OnTheMap/Pods-OnTheMap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -99,6 +129,10 @@
 		0F37B9342470474E000E87A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0FCECBF02471276400FF3FBA /* Responses */,
+				0FCECBEF2471275C00FF3FBA /* Requests */,
+				0FCECBEE2471275500FF3FBA /* Client */,
+				0FCECBED2471274C00FF3FBA /* Data */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -111,6 +145,49 @@
 				0F37B9382470477D000E87A1 /* MapViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		0FCECBED2471274C00FF3FBA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0FCECBEE2471275500FF3FBA /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				0FCECBF1247127F700FF3FBA /* Client.swift */,
+				0FCECBF724712F2600FF3FBA /* API.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		0FCECBEF2471275C00FF3FBA /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				0FCECBF524712D8100FF3FBA /* StudentsLocationsRequest.swift */,
+				0FCECBFB2471354E00FF3FBA /* CreateStudentLocationRequest.swift */,
+				0FCECBFF24713AD700FF3FBA /* UpdateStudentRequest.swift */,
+				0FCECC0324713E9600FF3FBA /* LoginRequest.swift */,
+				0FCECC092471479000FF3FBA /* DeleteSessionRequest.swift */,
+				0FCECC0B247149FB00FF3FBA /* StudentInformationRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0FCECBF02471276400FF3FBA /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				0FCECBF324712AC300FF3FBA /* StudentsLocations.swift */,
+				0FCECBF92471314F00FF3FBA /* ErrorResponse.swift */,
+				0FCECBFD2471363400FF3FBA /* PostLocationResponse.swift */,
+				0FCECC0124713D7F00FF3FBA /* UpdateLocationResponse.swift */,
+				0FCECC05247141D500FF3FBA /* LoginResponse.swift */,
+				0FCECC072471474A00FF3FBA /* DeleteSessionResponse.swift */,
+				0FCECC0D24714D6300FF3FBA /* StudentInformationResponse.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		5309E76223E86EEE6016AA90 /* Pods */ = {
@@ -228,12 +305,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCECBF824712F2600FF3FBA /* API.swift in Sources */,
+				0FCECC0424713E9600FF3FBA /* LoginRequest.swift in Sources */,
+				0FCECC082471474A00FF3FBA /* DeleteSessionResponse.swift in Sources */,
+				0FCECC06247141D500FF3FBA /* LoginResponse.swift in Sources */,
 				0F37B9392470477D000E87A1 /* LoginViewController.swift in Sources */,
+				0FCECC0A2471479000FF3FBA /* DeleteSessionRequest.swift in Sources */,
+				0FCECC0224713D7F00FF3FBA /* UpdateLocationResponse.swift in Sources */,
 				0F37B93B2470477D000E87A1 /* MapViewController.swift in Sources */,
+				0FCECBFA2471314F00FF3FBA /* ErrorResponse.swift in Sources */,
+				0FCECBF424712AC300FF3FBA /* StudentsLocations.swift in Sources */,
+				0FCECC0E24714D6300FF3FBA /* StudentInformationResponse.swift in Sources */,
+				0FCECBF624712D8100FF3FBA /* StudentsLocationsRequest.swift in Sources */,
 				0F37B92424704422000E87A1 /* ViewController.swift in Sources */,
+				0FCECBFE2471363400FF3FBA /* PostLocationResponse.swift in Sources */,
+				0FCECC0024713AD700FF3FBA /* UpdateStudentRequest.swift in Sources */,
 				0F37B93F247062C1000E87A1 /* ListCell.swift in Sources */,
+				0FCECBFC2471354E00FF3FBA /* CreateStudentLocationRequest.swift in Sources */,
+				0FCECC0C247149FB00FF3FBA /* StudentInformationRequest.swift in Sources */,
 				0F37B92024704422000E87A1 /* AppDelegate.swift in Sources */,
 				0F37B93A2470477D000E87A1 /* ListViewController.swift in Sources */,
+				0FCECBF2247127F700FF3FBA /* Client.swift in Sources */,
 				0F37B92224704422000E87A1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

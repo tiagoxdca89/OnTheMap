@@ -57,14 +57,29 @@ class MapViewController: UIViewController {
     
 
     @IBAction func postPin(_ sender: Any) {
-        
-        
+        showAlertToInsertAPin()
     }
     
 
 }
 
 extension MapViewController: MKMapViewDelegate {
+    
+    private func showAlertToInsertAPin() {
+        let title = "You have already posted a Student Location. Would you like to Overwrite Your Current Location?"
+        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        
+        let overwiteHandler: ((UIAlertAction) -> Void)? = { action in print("Clicou aqui")}
+        let overwriteAction = UIAlertAction(title: "Overwrite", style: .default, handler: overwiteHandler)
+        alert.addAction(overwriteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert.addAction(cancelAction)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         

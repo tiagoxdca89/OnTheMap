@@ -67,12 +67,12 @@ extension Client {
         }
     }
     
-    static func getStudentInformation(studentID: String, completion: @escaping (StudentInformationResponse?, Error?) -> Void) {
-        taskForGETRequest(url: Endpoints.studentInformation(userID: studentID).url, responseType: StudentInformationResponse.self) { (response, error) in
+    static func getStudentInformation(studentID: String, completion: @escaping ([StudentLocation], Error?) -> Void) {
+        taskForGETRequest(url: Endpoints.studentInformation(userID: studentID).url, responseType: StudentsLocations.self) { (response, error) in
             if let response = response {
-                completion(response, nil)
+                completion(response.results, nil)
             } else {
-                completion(nil, error)
+                completion([], error)
             }
         }
     }
@@ -118,18 +118,12 @@ extension Client {
     @discardableResult
     static func taskForGETRequest<ResponseType: Decodable>(url: URL, responseType: ResponseType.Type, completion: @escaping (ResponseType?, Error?) -> Void) -> URLSessionDataTask {
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard var data = data else {
+            guard let data = data else {
                 DispatchQueue.main.async {
                     completion(nil, error)
                 }
                 return
             }
-            
-            if ResponseType.self == StudentInformationResponse.self {
-                let range = Range(5...data.count-1)
-                data = data.subdata(in: range)
-            }
-            
             let decoder = JSONDecoder()
             do {
                 let responseObject = try decoder.decode(ResponseType.self, from: data)

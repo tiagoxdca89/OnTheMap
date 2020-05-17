@@ -12,11 +12,14 @@ class ListCell: UITableViewCell {
     
     
     @IBOutlet weak var imagePin: UIImageView!
-    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var subTitle: UILabel!
     
     
     func setup() {
-        self.label.text = "Name of the User"
+        self.title.text = "Name of the User"
+        self.subTitle.text = "https://udacity.com"
     }
 
 }

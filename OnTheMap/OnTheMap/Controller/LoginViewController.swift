@@ -20,7 +20,6 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dismissKeyboard()
 
         // Do any additional setup after loading the view.
     }
@@ -33,10 +32,11 @@ class LoginViewController: UIViewController {
         guard !email.isEmpty && !password.isEmpty else { return }
         
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let tabBarController = storyBoard.instantiateViewController(withIdentifier: "TabBarController") as? UITabBarController else { return }
-        tabBarController.modalPresentationStyle = .fullScreen
-        tabBarController.modalTransitionStyle = .flipHorizontal
-        present(tabBarController, animated: true, completion: nil)
+        guard let navigationController = storyBoard.instantiateViewController(withIdentifier: "NavigationController") as? NavigationViewController else { return }
+        navigationController.navigationItem.title = "On The Map"
+        navigationController.modalPresentationStyle = .fullScreen
+        navigationController.modalTransitionStyle = .flipHorizontal
+        present(navigationController, animated: true, completion: nil)
     }
     
     
@@ -56,11 +56,4 @@ class LoginViewController: UIViewController {
     }
     */
 
-}
-
-extension LoginViewController {
-    private func dismissKeyboard() {
-        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
-        view.addGestureRecognizer(tap)
-    }
 }

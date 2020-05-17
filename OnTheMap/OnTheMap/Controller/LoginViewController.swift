@@ -13,7 +13,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var signUpLabel: UIButton!
+    
+    @IBOutlet weak var signUpButton: UIButton!
     
     
     
@@ -36,6 +37,12 @@ class LoginViewController: UIViewController {
         tabBarController.modalPresentationStyle = .fullScreen
         tabBarController.modalTransitionStyle = .flipHorizontal
         present(tabBarController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func performSignUp(_ sender: Any) {
+        
+        
     }
     
 

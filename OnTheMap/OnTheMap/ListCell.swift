@@ -16,10 +16,8 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
-    
-    func setup() {
-        self.title.text = "Name of the User"
-        self.subTitle.text = "https://udacity.com"
+    func setup(location: StudentLocation) {
+        self.title.text = location.firstName
+        self.subTitle.text = location.mediaURL
     }
-
 }

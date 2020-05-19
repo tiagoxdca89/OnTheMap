@@ -26,8 +26,9 @@ class InformationViewController: UIViewController {
     
     @IBAction func findLocation(_ sender: UIButton) {
         view.endEditing(true)
-        self.performSegue(withIdentifier: "InsertToPost", sender: nil)
-        
+        if validateFields() {
+            self.performSegue(withIdentifier: "InsertToPost", sender: nil)
+        }
     }
     
     
@@ -36,7 +37,23 @@ class InformationViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "InsertToPost", let destination = segue.destination as? AddLocationViewController else { return }
+        guard let location = locationTF.text, let link = linkTF.text else {
+            return
+        }
+        guard segue.identifier == "InsertToPost",
+            let destination = segue.destination as? AddLocationViewController else { return }
+        destination.loc = (location: location, link: link)
     }
 
+    func validateFields() -> Bool {
+        guard let location = locationTF.text, !location.isEmpty else {
+            print("Location Invalid")
+            return false
+        }
+        guard let link = linkTF.text, !link.isEmpty else {
+            print("Link Invalid")
+            return false
+        }
+        return true
+    }
 }

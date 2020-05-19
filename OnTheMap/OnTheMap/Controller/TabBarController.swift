@@ -20,9 +20,17 @@ class TabBarController: UITabBarController {
     
     
     @IBAction func refreshData(_ sender: UIBarButtonItem) {
-        print("Tap on refresh")
+        showLoading(show: true)
+        Client.getStudentsLocations { [weak self] (locations, error) in
+            if let listController = self?.viewControllers?.last as? ListViewController , listController.isViewLoaded {
+                listController.locations = locations
+            }
+            if let mapController = self?.viewControllers?.first as? MapViewController , mapController.isViewLoaded {
+                mapController.locations = locations
+            }
+            self?.showLoading(show: false)
+        }
     }
-    
     
     @IBAction func addLocation(_ sender: UIBarButtonItem) {
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -32,10 +40,14 @@ class TabBarController: UITabBarController {
     }
     
     @objc private func logout() {
-        print("Click on Logout button")
+        showLoading(show: true)
+        Client.deleteSession { [weak self] (success, error) in
+            if error == nil {
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+            }
+            self?.showLoading(show: false)
+        }
     }
-    
-
 }
 
 extension TabBarController {

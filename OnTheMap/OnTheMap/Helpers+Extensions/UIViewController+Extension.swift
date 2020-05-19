@@ -7,12 +7,21 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 extension UIViewController {
     
     func onTapDismissKeyboard() {
         let tap = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
+    }
+    
+    func showLoading(show: Bool) {
+        if show {
+            MBProgressHUD.showAdded(to: view, animated: true)
+        } else {
+            MBProgressHUD.hide(for: view, animated: true)
+        }
     }
     
 }

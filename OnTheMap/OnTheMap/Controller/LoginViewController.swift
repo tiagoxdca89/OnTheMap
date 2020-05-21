@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
         Client.login(username: email, password: password) { [weak self] (success, error) in
             if error == nil {
                 self?.showTabBar()
+                self?.cleanFields()
             } else {
                 guard let error = error else { return }
                 self?.showAlert(title: "Someting went wrong", message: "\(String(describing: error.localizedDescription))")
@@ -53,6 +54,11 @@ class LoginViewController: UIViewController {
             return
         }
         UIApplication.shared.open(url)
+    }
+    
+    private func cleanFields() {
+        emailTextField.text = ""
+        passwordTextField.text = ""
     }
 
     private func showTabBar() {

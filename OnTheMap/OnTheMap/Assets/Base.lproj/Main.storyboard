@@ -363,27 +363,27 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="e5W-bR-vsZ">
-                                                    <rect key="frame" x="82" y="0.0" width="316" height="60"/>
+                                                    <rect key="frame" x="82" y="4" width="316" height="52"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxq-mH-iFc">
-                                                            <rect key="frame" x="0.0" y="0.0" width="316" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="316" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Kw-ns-Mnh">
-                                                            <rect key="frame" x="0.0" y="30" width="316" height="30"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
+                                                            <rect key="frame" x="0.0" y="26" width="316" height="26"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="e5W-bR-vsZ" secondAttribute="bottom" id="9e3-CC-Shg"/>
+                                                <constraint firstAttribute="bottom" secondItem="e5W-bR-vsZ" secondAttribute="bottom" constant="4" id="9e3-CC-Shg"/>
                                                 <constraint firstItem="lvq-kg-hXw" firstAttribute="leading" secondItem="ai6-gv-g9d" secondAttribute="leading" constant="16" id="BH3-Wt-djC"/>
-                                                <constraint firstItem="e5W-bR-vsZ" firstAttribute="top" secondItem="ai6-gv-g9d" secondAttribute="top" id="KGV-vn-2SY"/>
+                                                <constraint firstItem="e5W-bR-vsZ" firstAttribute="top" secondItem="ai6-gv-g9d" secondAttribute="top" constant="4" id="KGV-vn-2SY"/>
                                                 <constraint firstItem="lvq-kg-hXw" firstAttribute="centerY" secondItem="ai6-gv-g9d" secondAttribute="centerY" id="TkG-Yr-cNL"/>
                                                 <constraint firstAttribute="trailing" secondItem="e5W-bR-vsZ" secondAttribute="trailing" constant="16" id="oAh-NK-LFF"/>
                                                 <constraint firstItem="e5W-bR-vsZ" firstAttribute="leading" secondItem="lvq-kg-hXw" secondAttribute="trailing" constant="16" id="ujs-Zl-4IV"/>

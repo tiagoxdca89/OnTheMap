@@ -21,19 +21,39 @@ class AddLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLocation()
+        mapView.delegate = self
+        guard isConnectedToInternet() else {
+            showAlert(title: "You are not connected to the internet!", message: "")
+            return
+        }
+        setLocationOnMap()
     }
     
     @IBAction func finishBtn(_ sender: UIButton) {
-        navigationController?.dismiss(animated: true, completion: nil)
+        sendLocation()
+    }
+    
+    private func sendLocation() {
+        showLoading(show: true)
+        Client.postStudentLocation(username: "joao.almeida@hotmail.com", password: "135792468txdca") { [weak self] (success, error) in
+            if error == nil {
+                self?.navigationController?.dismiss(animated: true, completion: nil)
+            } else {
+                self?.showAlert(title: "Something went wrong", message: error?.localizedDescription ?? "")
+            }
+            self?.showLoading(show: false)
+        }
     }
 
-    private func setLocation() {
+    private func setLocationOnMap() {
         showLoading(show: true)
-        let textLocation = "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France"
+        let textLocation = loc?.location ?? ""
         
         self.locationManager.getLocation(forPlaceCalled: textLocation) { [weak self] (location: CLLocation?, error: ErrorType?) in
             guard let location = location else { return }
+            if error != nil {
+                self?.showAlert(title: "Something went wrong!", message: error?.description ?? "")
+            }
             
             let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
@@ -46,7 +66,25 @@ class AddLocationViewController: UIViewController {
     private func addAnotation(coordinate: CLLocationCoordinate2D) {
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = "\(loc?.link ?? "Something went wrong!")"
+        annotation.title = "\(loc?.location ?? "")"
         self.mapView.addAnnotation(annotation)
+    }
+}
+
+extension AddLocationViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let reuseId = "pin"
+        var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
+        if pinView == nil {
+            pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
+            pinView!.canShowCallout = true
+            pinView?.pinTintColor = .red
+            pinView!.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        else {
+            pinView!.annotation = annotation
+        }
+        return pinView
     }
 }

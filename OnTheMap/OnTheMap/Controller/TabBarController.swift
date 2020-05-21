@@ -20,6 +20,10 @@ class TabBarController: UITabBarController {
     
     
     @IBAction func refreshData(_ sender: UIBarButtonItem) {
+        guard isConnectedToInternet() else {
+            showAlert(title: "You are not connected to the internet!", message: "")
+            return
+        }
         showLoading(show: true)
         Client.getStudentsLocations { [weak self] (locations, error) in
             if let listController = self?.viewControllers?.last as? ListViewController , listController.isViewLoaded {

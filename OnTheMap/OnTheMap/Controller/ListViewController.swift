@@ -25,6 +25,10 @@ class ListViewController: UIViewController {
     }
     
     private func refreshList() {
+        guard isConnectedToInternet() else {
+            showAlert(title: "You are not connected to the internet!", message: "")
+            return
+        }
         showLoading(show: true)
         Client.getStudentsLocations { [weak self] (locations, error) in
             self?.locations = locations
@@ -52,5 +56,11 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let location = locations[indexPath.row]
+        guard let url = URL(string: location.mediaURL), location.mediaURL.isValidURLString() else {
+            showAlert(title: "Could not open Safari.", message: "This link is not valid.")
+            return
+        }
+        UIApplication.shared.open(url)
     }
 }

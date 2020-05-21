@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StudentInformationResponse: Codable {
+class StudentInformation: Codable {
     let last_name: String?
     let first_name: String?
     let location: String?

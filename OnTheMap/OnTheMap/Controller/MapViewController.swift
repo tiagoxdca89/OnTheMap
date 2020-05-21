@@ -28,9 +28,9 @@ class MapViewController: UIViewController {
         Client.getStudentsLocations { [weak self] (locations, error) in
             if locations.count > 0 {
                self?.locations = locations
-            }
-            if error != nil {
-                print("\(error)")
+            } else {
+                guard let error = error else { return }
+                self?.showAlert(title: "Something went wrong!", message: error.localizedDescription)
             }
         }
     }
@@ -38,27 +38,9 @@ class MapViewController: UIViewController {
     private func setupViews() {
         navigationItem.title = "On The Map"
     }
-    
-    @IBAction func postPin(_ sender: Any) {
-        showAlertToInsertAPin()
-    }
 }
 
 extension MapViewController: MKMapViewDelegate {
-    
-    private func showAlertToInsertAPin() {
-        let title = "You have already posted a Student Location. Would you like to Overwrite Your Current Location?"
-        let alert = UIAlertController(title: title, message: "", preferredStyle: .alert)
-        
-        let overwiteHandler: ((UIAlertAction) -> Void)? = { action in print("Click here.")}
-        let overwriteAction = UIAlertAction(title: "Overwrite", style: .default, handler: overwiteHandler)
-        alert.addAction(overwriteAction)
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
-        alert.addAction(cancelAction)
-
-        present(alert, animated: true, completion: nil)
-    }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         let reuseId = "pin"
@@ -100,7 +82,6 @@ extension MapViewController: MKMapViewDelegate {
             let first = location.firstName
             let last = location.lastName
             let mediaURL = location.mediaURL
-            print("==>\(mediaURL)")
             
             let annotation = MKPointAnnotation()
             annotation.coordinate = coordinate

@@ -163,7 +163,6 @@ extension Client {
                 }
                 return
             }
-            
             if RequestType.self == LoginBody.self {
                 let range = Range(5...data.count-1)
                 data = data.subdata(in: range)
@@ -176,15 +175,8 @@ extension Client {
                     completion(responseObject, nil)
                 }
             } catch {
-                do {
-                    let errorResponse = try decoder.decode(ErrorResponse.self, from: data) as Error
-                    DispatchQueue.main.async {
-                        completion(nil, errorResponse)
-                    }
-                } catch {
-                    DispatchQueue.main.async {
-                        completion(nil, error)
-                    }
+                DispatchQueue.main.async {
+                    completion(nil, error)
                 }
             }
         }

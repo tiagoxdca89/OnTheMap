@@ -13,6 +13,17 @@ enum ErrorType: Error {
     case geocodeAddressStringError
     case placemarkIsNil
     case placeMarkLocationNil
+    
+    var description: String {
+        switch self {
+        case .geocodeAddressStringError:
+            return "Error attempting convert location to coordinates"
+        case .placemarkIsNil:
+            return "PlaceMark is empty"
+        case .placeMarkLocationNil:
+            return "Placemark location is empty"
+        }
+    }
 }
 
 class LocationManager: NSObject {
@@ -25,19 +36,16 @@ class LocationManager: NSObject {
         geocoder.geocodeAddressString(name) { placemarks, error in
             
             guard error == nil else {
-                print("*** Error in \(#function): \(error!.localizedDescription)")
                 completion(nil, .geocodeAddressStringError)
                 return
             }
             
             guard let placemark = placemarks?[0] else {
-                print("*** Error in \(#function): placemark is nil")
                 completion(nil,.placemarkIsNil)
                 return
             }
             
             guard let location = placemark.location else {
-                print("*** Error in \(#function): placemark is nil")
                 completion(nil, .placeMarkLocationNil)
                 return
             }

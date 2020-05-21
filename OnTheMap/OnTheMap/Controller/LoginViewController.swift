@@ -18,31 +18,38 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
 
-    
-    
     @IBAction func performLogin(_ sender: Any) {
+        guard isConnectedToInternet() else {
+            showAlert(title: "You are not connected to the internet!", message: "")
+            return
+        }
         guard let email = emailTextField.text, let password = passwordTextField.text else { return }
-        guard !email.isEmpty && !password.isEmpty else { return }
+        guard !email.isEmpty else {
+            showAlert(title: "Invalid!", message: "UserName should not be empty.")
+            return
+        }
+        guard !password.isEmpty else {
+            showAlert(title: "Invalid!", message: "Password should not be empty.")
+            return
+        }
         
         showLoading(show: true)
         Client.login(username: email, password: password) { [weak self] (success, error) in
             if error == nil {
                 self?.showTabBar()
             } else {
-                self?.showAlert()
+                guard let error = error else { return }
+                self?.showAlert(title: "Someting went wrong", message: "\(String(describing: error.localizedDescription))")
             }
             self?.showLoading(show: false)
         }
     }
     
-    
     @IBAction func performSignUp(_ sender: Any) {
         guard let url = URL(string: "https://auth.udacity.com/sign-up") else {
-            showAlert()
+            showAlert(title: "Could not open Safari.", message: "This link is not valid.")
             return
         }
         UIApplication.shared.open(url)
@@ -55,11 +62,5 @@ class LoginViewController: UIViewController {
         navigationController.modalPresentationStyle = .fullScreen
         navigationController.modalTransitionStyle = .flipHorizontal
         present(navigationController, animated: true, completion: nil)
-    }
-    
-    private func showAlert() {
-        let alert = UIAlertController(title: "Something went wrong", message: "Please try again...", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-        self.present(alert, animated: true)
     }
 }

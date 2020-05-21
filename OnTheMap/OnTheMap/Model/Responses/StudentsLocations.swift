@@ -9,10 +9,10 @@
 import Foundation
 
 struct StudentsLocations: Codable {
-    let results: [StudentLocation]
+    let results: [StudentInformation]
     
-    static func getFakeStudentInformation() -> StudentLocation {
-        return StudentLocation(createdAt: "2015-02-24T22:27:14.456Z",
+    static func getFakeStudentInformation() -> StudentInformation {
+        return StudentInformation(createdAt: "2015-02-24T22:27:14.456Z",
                                   firstName: "Joao",
                                   lastName: "Almeida",
                                   latitude: 41.4444300,
@@ -25,7 +25,7 @@ struct StudentsLocations: Codable {
     }
 }
 
-struct StudentLocation: Codable {
+struct StudentInformation: Codable {
     let createdAt: String
     let firstName: String
     let lastName: String

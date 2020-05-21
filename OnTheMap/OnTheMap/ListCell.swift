@@ -16,7 +16,7 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var subTitle: UILabel!
     
-    func setup(location: StudentLocation) {
+    func setup(location: StudentInformation) {
         self.title.text = location.firstName
         self.subTitle.text = location.mediaURL
     }

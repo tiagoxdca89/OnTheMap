@@ -11,27 +11,25 @@ import UIKit
 class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    var locations: [StudentLocation] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        refreshList()
+        fetchStudentsInformation()
     }
     
-    private func refreshList() {
+    private func fetchStudentsInformation() {
         guard isConnectedToInternet() else {
             showAlert(title: "You are not connected to the internet!", message: "")
             return
         }
         showLoading(show: true)
         Client.getStudentsLocations { [weak self] (locations, error) in
-            self?.locations = locations
+            let sortedLocations = locations.sorted {
+                $0.updatedAt < $1.updatedAt
+            }
+            StudentLocationModel.locations = sortedLocations
+            self?.tableView.reloadData()
             self?.showLoading(show: false)
         }
     }
@@ -45,18 +43,18 @@ extension ListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath) as? ListCell else { return UITableViewCell() }
-        let location = locations[indexPath.row]
+        let location = StudentLocationModel.locations[indexPath.row]
         cell.setup(location: location)
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return locations.count
+        return StudentLocationModel.locations.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let location = locations[indexPath.row]
+        let location = StudentLocationModel.locations[indexPath.row]
         guard let url = URL(string: location.mediaURL), location.mediaURL.isValidURLString() else {
             showAlert(title: "Could not open Safari.", message: "This link is not valid.")
             return

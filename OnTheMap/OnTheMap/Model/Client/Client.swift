@@ -67,7 +67,7 @@ extension Client {
         }
     }
     
-    static func getStudentInformation(studentID: String, completion: @escaping ([StudentLocation], Error?) -> Void) {
+    static func getStudentInformation(studentID: String, completion: @escaping ([StudentInformation], Error?) -> Void) {
         taskForGETRequest(url: Endpoints.studentInformation(userID: studentID).url, responseType: StudentsLocations.self) { (response, error) in
             if let response = response {
                 completion(response.results, nil)
@@ -77,7 +77,7 @@ extension Client {
         }
     }
     
-    static func getStudentsLocations(completion: @escaping ([StudentLocation], Error?) -> Void) {
+    static func getStudentsLocations(completion: @escaping ([StudentInformation], Error?) -> Void) {
         taskForGETRequest(url: Endpoints.getStudentsLocations.url, responseType: StudentsLocations.self) { response, error in
             if let response = response {
                 completion(response.results, nil)

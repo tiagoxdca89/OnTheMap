@@ -34,7 +34,6 @@
 		0FCECC082471474A00FF3FBA /* DeleteSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC072471474A00FF3FBA /* DeleteSessionResponse.swift */; };
 		0FCECC0A2471479000FF3FBA /* DeleteSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC092471479000FF3FBA /* DeleteSessionRequest.swift */; };
 		0FCECC0C247149FB00FF3FBA /* StudentInformationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC0B247149FB00FF3FBA /* StudentInformationRequest.swift */; };
-		0FCECC0E24714D6300FF3FBA /* StudentInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FCECC0D24714D6300FF3FBA /* StudentInformationResponse.swift */; };
 		0FDB7BAB247490E9004F3FC1 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FDB7BAA247490E9004F3FC1 /* LocationManager.swift */; };
 		0FECE4142471B8B20008A66E /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECE4132471B8B20008A66E /* UIViewController+Extension.swift */; };
 		0FECE4192471B8DB0008A66E /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FECE4152471B8DA0008A66E /* NavigationViewController.swift */; };
@@ -75,7 +74,6 @@
 		0FCECC072471474A00FF3FBA /* DeleteSessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSessionResponse.swift; sourceTree = "<group>"; };
 		0FCECC092471479000FF3FBA /* DeleteSessionRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSessionRequest.swift; sourceTree = "<group>"; };
 		0FCECC0B247149FB00FF3FBA /* StudentInformationRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationRequest.swift; sourceTree = "<group>"; };
-		0FCECC0D24714D6300FF3FBA /* StudentInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInformationResponse.swift; sourceTree = "<group>"; };
 		0FDB7BAA247490E9004F3FC1 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		0FECE4132471B8B20008A66E /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIViewController+Extension.swift"; path = "../Helpers+Extensions/UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		0FECE4152471B8DA0008A66E /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 				0FCECC0124713D7F00FF3FBA /* UpdateLocationResponse.swift */,
 				0FCECC05247141D500FF3FBA /* LoginResponse.swift */,
 				0FCECC072471474A00FF3FBA /* DeleteSessionResponse.swift */,
-				0FCECC0D24714D6300FF3FBA /* StudentInformationResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -380,7 +377,6 @@
 				0F37B93B2470477D000E87A1 /* MapViewController.swift in Sources */,
 				0FCECBFA2471314F00FF3FBA /* ErrorResponse.swift in Sources */,
 				0FCECBF424712AC300FF3FBA /* StudentsLocations.swift in Sources */,
-				0FCECC0E24714D6300FF3FBA /* StudentInformationResponse.swift in Sources */,
 				0FCECBF624712D8100FF3FBA /* StudentsLocationsRequest.swift in Sources */,
 				0F37B92424704422000E87A1 /* ViewController.swift in Sources */,
 				0FCECBFE2471363400FF3FBA /* PostLocationResponse.swift in Sources */,

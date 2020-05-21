@@ -310,7 +310,7 @@
                 <tabBarController storyboardIdentifier="TabBarController" id="gDp-yq-XOk" customClass="TabBarController" customModule="OnTheMap" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="yRf-UU-SDd">
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_addpin" id="PcQ-hT-oHH">
+                            <barButtonItem image="icon_pin" id="PcQ-hT-oHH">
                                 <connections>
                                     <action selector="addLocation:" destination="gDp-yq-XOk" id="f4r-UL-xft"/>
                                 </connections>
@@ -423,7 +423,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="icon_addpin" width="24" height="24"/>
         <image name="icon_listview-deselected" width="75" height="50"/>
         <image name="icon_listview-selected" width="75" height="50"/>
         <image name="icon_mapview-deselected" width="75" height="50"/>

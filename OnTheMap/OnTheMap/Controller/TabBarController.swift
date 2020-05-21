@@ -14,10 +14,7 @@ class TabBarController: UITabBarController {
         super.viewDidLoad()
         navigationItem.title = "On the Map"
         setupLeftBarButtonItem()
-        // Do any additional setup after loading the view.
     }
-    
-    
     
     @IBAction func refreshData(_ sender: UIBarButtonItem) {
         guard isConnectedToInternet() else {
@@ -26,13 +23,23 @@ class TabBarController: UITabBarController {
         }
         showLoading(show: true)
         Client.getStudentsLocations { [weak self] (locations, error) in
-            if let listController = self?.viewControllers?.last as? ListViewController , listController.isViewLoaded {
-                listController.locations = locations
+            guard let self = self else { return }
+            if locations.count > 0 {
+                StudentLocationModel.locations = locations.sorted {
+                    $0.updatedAt < $1.updatedAt }
+                print("\(locations)")
+                if let listController = self.viewControllers?.last as? ListViewController , listController.isViewLoaded {
+                    listController.tableView.reloadData()
+                }
+                if let mapController = self.viewControllers?.first as? MapViewController , mapController.isViewLoaded {
+                    mapController.mapView.removeAnnotations(mapController.annotations)
+                    mapController.addAnnotationsToMap(locations: locations)
+                }
+            } else {
+                guard let error = error else { return }
+                self.showAlert(title: "Something went wrong!", message: error.localizedDescription)
             }
-            if let mapController = self?.viewControllers?.first as? MapViewController , mapController.isViewLoaded {
-                mapController.locations = locations
-            }
-            self?.showLoading(show: false)
+            self.showLoading(show: false)
         }
     }
     
@@ -62,7 +69,6 @@ extension TabBarController {
         logoutBtn.addTarget(self, action: #selector(logout), for:    .touchUpInside)
         logoutBtn.setTitle("LOGOUT", for: .normal)
         let menuBarButtonItem = UIBarButtonItem(customView: logoutBtn)
-
         navigationItem.leftBarButtonItems = [menuBarButtonItem]
     }
 }
